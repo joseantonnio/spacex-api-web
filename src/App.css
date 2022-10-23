@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  width: 40vmax;
+  pointer-events: none;
+}
+
+.App-header {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vmax;
+  color: white;
+}
+
+.App-header ul {
+  list-style: none;
+  padding-inline-start: 0;
+  font-size: 1vmax;
+}
+
+.App-header li {
+  display: inline-block;
+  margin: 0 1vh;
+}
+
+.App-footer {
+  position: fixed;
+  font-size: 1vmax;
+  padding: 1vh;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: gray;
+  text-align: center;
+}
+
+@media (orientation: portrait) {
+  .App-header ul {
+    font-size: 2vmax;
+  }
+
+  .App-header {
+    font-size: 3vmax;
+  }
+}
