@@ -1,56 +1,30 @@
 import logo from './logo.svg';
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          A simple SpaceX API web interface
-        </p>
-        <ul>
-          <li>
-            Launches:
-          </li>
-          <li>
-            <a
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Upcoming
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Next
-            </a>
-          </li>
+      <img src={logo} className="App-logo" alt="logo" />
+      <p>
+        A simple SpaceX API web interface
+      </p>
+      <ul>
+        <li>
+          <Link to="/upcoming">Upcoming Launch</Link>
+        </li>
+        <li>
+          <Link to="/next">Next Launches</Link>
+        </li>
 
-          <li>
-            <a
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Past
-            </a>
-          </li>
+        <li>
+          <Link to="/past">Past Launches</Link>
+        </li>
 
-          <li>
-            <a
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Latest
-            </a>
-          </li>
-        </ul>
-      </header>
+        <li>
+          <Link to="/latest">Latest Launch</Link>
+        </li>
+      </ul>
+    </header>
   );
 }
 
