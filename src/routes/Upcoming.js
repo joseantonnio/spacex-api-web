@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Card from '../components/Card'
-import API from '../services/api'
-import defaultPatch from '../assets/patch.png'
+import API from '../services/api';
+import Launch from '../components/Launch';
 
 export default function Upcoming() {
   const [launch, setLaunch] = useState();
@@ -21,14 +20,6 @@ export default function Upcoming() {
   }, []);
 
   return (
-    <div>
-      <Card bg={launch?.vehiacle?.image} loading={loading}>
-        <p><img src={launch?.patch || defaultPatch} width='150px' alt='' /></p>
-        <p><strong>Name:</strong> {launch?.name}</p>
-        <p><strong>Liftoff:</strong> {launch?.liftoff}</p>
-        <p><strong>Vehiacle:</strong> {launch?.vehiacle?.name}</p>
-        <p><strong>Launchpad:</strong> {launch?.launchpad?.name}</p>
-      </Card>
-    </div>
+    <Launch launch={launch} loading={loading} />
   );
 }

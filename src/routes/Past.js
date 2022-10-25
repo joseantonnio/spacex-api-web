@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Card from '../components/Card'
-import API from '../services/api'
-import defaultPatch from '../assets/patch.png'
-import { RotatingLines } from 'react-loader-spinner'
+import Launch from '../components/Launch';
+import API from '../services/api';
+import { RotatingLines } from 'react-loader-spinner';
 
 export default function Past() {
   const [launches, setLaunches] = useState();
@@ -21,11 +20,7 @@ export default function Past() {
     <div>
       {launches ? launches.map((launch, index) => {
         return (
-          <Card>
-            <p><img src={launch?.patch || defaultPatch} width='150px' height='150px' alt='' /></p>
-            <p><strong>Name:</strong> {launch?.name}</p>
-            <p><strong>Liftoff:</strong> {launch?.liftoff}</p>
-          </Card>
+          <Launch launch={launch} loading={false} />
         );
       }) : <RotatingLines strokeColor="white" width="36" />}
     </div>
