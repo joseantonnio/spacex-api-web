@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Upcoming from './routes/Upcoming';
 import Next from './routes/Next';
 import Past from './routes/Past';
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/upcoming" element={<Upcoming />} />
+        <Route path="/" element={<Navigate to="/upcoming" />} />
         <Route path="/upcoming" element={<Upcoming />} />
         <Route path="/next" element={<Next />} />
         <Route path="/past" element={<Past />} />
