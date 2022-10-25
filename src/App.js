@@ -1,11 +1,23 @@
 import './App.css';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { Routes, Route, Navigate } from "react-router-dom";
+import Upcoming from './routes/Upcoming';
+import Next from './routes/Next';
+import Past from './routes/Past';
+import Latest from './routes/Latest';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <Routes>
+        <Route path="/" element={<Navigate to="/upcoming" />} />
+        <Route path="/upcoming" element={<Upcoming />} />
+        <Route path="/next" element={<Next />} />
+        <Route path="/past" element={<Past />} />
+        <Route path="/latest" element={<Latest />} />
+      </Routes>
       <Footer />
     </div>
   );
